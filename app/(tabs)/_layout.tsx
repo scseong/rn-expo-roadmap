@@ -5,6 +5,7 @@ import { Link, Tabs } from "expo-router";
 import { Image, Pressable } from "react-native";
 
 import Colors from "@/constants/Colors";
+import { FONT, FONT_BOLD } from "@/constants/Fonts";
 import { useColorScheme } from "@/components/useColorScheme";
 import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 
@@ -43,8 +44,8 @@ export default function TabLayout() {
         tabBarLabelPosition: "below-icon",
         tabBarStyle: { height: 56 },
         tabBarIconStyle: { marginBottom: 2 },
-        tabBarLabelStyle: { fontSize: 10, fontFamily: "Pretendard" },
-        headerTitleStyle: { fontFamily: "Pretendard-Bold" },
+        tabBarLabelStyle: { fontSize: 10, fontFamily: FONT },
+        headerTitleStyle: { fontFamily: FONT_BOLD },
         // Disable the static render of the header on web
         // to prevent a hydration error in React Navigation v6.
         headerShown: useClientOnlyValue(false, true),

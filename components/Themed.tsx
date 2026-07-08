@@ -6,6 +6,7 @@
 import { Text as DefaultText, View as DefaultView } from 'react-native';
 
 import Colors from '@/constants/Colors';
+import { FONT } from '@/constants/Fonts';
 import { useColorScheme } from './useColorScheme';
 
 type ThemeProps = {
@@ -36,7 +37,7 @@ export function Text(props: TextProps) {
 
   return (
     <DefaultText
-      style={[{ color, fontFamily: 'Pretendard' }, style]}
+      style={[{ color, fontFamily: FONT }, style]}
       {...otherProps}
     />
   );

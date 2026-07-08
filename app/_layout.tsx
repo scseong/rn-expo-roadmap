@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 
 import { useColorScheme } from "@/components/useColorScheme";
+import { FONT, FONT_BOLD } from "@/constants/Fonts";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -28,8 +29,8 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const [loaded, error] = useFonts({
     SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
-    Pretendard: require("../assets/fonts/Pretendard-Regular.otf"),
-    "Pretendard-Bold": require("../assets/fonts/Pretendard-Bold.otf"),
+    [FONT]: require("../assets/fonts/Pretendard-Regular.otf"),
+    [FONT_BOLD]: require("../assets/fonts/Pretendard-Bold.otf"),
     ...FontAwesome.font,
   });
 
@@ -56,7 +57,7 @@ function RootLayoutNav() {
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack screenOptions={{ headerTitleStyle: { fontFamily: "Pretendard-Bold" } }}>
+      <Stack screenOptions={{ headerTitleStyle: { fontFamily: FONT_BOLD } }}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: "modal" }} />
         <Stack.Screen name="about" options={{ title: "About" }} />
