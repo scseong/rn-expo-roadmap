@@ -2,7 +2,7 @@ import React from "react";
 import { Ionicons } from "@react-native-vector-icons/ionicons";
 import { FontAwesomeFreeRegular } from "@react-native-vector-icons/fontawesome-free-regular";
 import { Link, Tabs } from "expo-router";
-import { Pressable } from "react-native";
+import { Image, Pressable } from "react-native";
 
 import Colors from "@/constants/Colors";
 import { useColorScheme } from "@/components/useColorScheme";
@@ -73,6 +73,19 @@ export default function TabLayout() {
             tabBarIcon: ({ color, focused }) => (
               <TabBarIcon name={icon} color={color} focused={focused} />
             ),
+            ...(name === "index" && {
+              headerTitle: () => (
+                <Link href="/" asChild>
+                  <Pressable>
+                    <Image
+                      source={require("@/assets/images/logo.png")}
+                      style={{ width: 43, height: 28 }}
+                      resizeMode="contain"
+                    />
+                  </Pressable>
+                </Link>
+              ),
+            }),
           }}
         />
       ))}
