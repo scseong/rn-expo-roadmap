@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Ionicons } from "@react-native-vector-icons/ionicons";
 import { FontAwesomeFreeRegular } from "@react-native-vector-icons/fontawesome-free-regular";
 import { Link, Tabs } from "expo-router";
@@ -8,6 +8,8 @@ import Colors from "@/constants/Colors";
 import { FONT, FONT_BOLD } from "@/constants/Fonts";
 import { useColorScheme } from "@/components/useColorScheme";
 import { useClientOnlyValue } from "@/components/useClientOnlyValue";
+import { NotificationsModal } from "@/components/NotificationsModal";
+import { BackButton } from "@/components/BackButton";
 
 type IconName = React.ComponentProps<typeof Ionicons>["name"];
 
@@ -36,60 +38,73 @@ const TABS: { name: string; title: string; icon: IconName }[] = [
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+  const [notificationsVisible, setNotificationsVisible] = useState(false);
 
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
-        tabBarLabelPosition: "below-icon",
-        tabBarStyle: { height: 56 },
-        tabBarIconStyle: { marginBottom: 2 },
-        tabBarLabelStyle: { fontSize: 10, fontFamily: FONT },
-        headerTitleStyle: { fontFamily: FONT_BOLD },
-        // Disable the static render of the header on web
-        // to prevent a hydration error in React Navigation v6.
-        headerShown: useClientOnlyValue(false, true),
-        headerRight: () => (
-          <Link href="/modal" asChild>
-            <Pressable>
+    <>
+      <Tabs
+        screenOptions={{
+          tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+          tabBarLabelPosition: "below-icon",
+          tabBarStyle: { height: 56 },
+          tabBarIconStyle: { marginBottom: 2 },
+          tabBarLabelStyle: { fontSize: 10, fontFamily: FONT },
+          headerTitleStyle: { fontFamily: FONT_BOLD },
+          // Disable the static render of the header on web
+          // to prevent a hydration error in React Navigation v6.
+          headerShown: useClientOnlyValue(false, true),
+          headerRight: () => (
+            <Pressable
+              onPress={() => setNotificationsVisible(true)}
+              hitSlop={12}
+              style={{ padding: 8, marginRight: 7 }}
+            >
               {({ pressed }) => (
                 <FontAwesomeFreeRegular
                   name="bell"
                   size={20}
                   color={Colors[colorScheme ?? "light"].text}
-                  style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                  style={{ opacity: pressed ? 0.5 : 1 }}
                 />
               )}
             </Pressable>
-          </Link>
-        ),
-      }}
-    >
-      {TABS.map(({ name, title, icon }) => (
-        <Tabs.Screen
-          key={name}
-          name={name}
-          options={{
-            title,
-            tabBarIcon: ({ color, focused }) => (
-              <TabBarIcon name={icon} color={color} focused={focused} />
-            ),
-            ...(name === "index" && {
-              headerTitle: () => (
-                <Link href="/" asChild>
-                  <Pressable>
-                    <Image
-                      source={require("@/assets/images/logo.png")}
-                      style={{ width: 43, height: 28 }}
-                      resizeMode="contain"
-                    />
-                  </Pressable>
-                </Link>
+          ),
+        }}
+      >
+        {TABS.map(({ name, title, icon }) => (
+          <Tabs.Screen
+            key={name}
+            name={name}
+            options={{
+              title,
+              tabBarIcon: ({ color, focused }) => (
+                <TabBarIcon name={icon} color={color} focused={focused} />
               ),
-            }),
-          }}
-        />
-      ))}
-    </Tabs>
+              ...(name === "index"
+                ? {
+                    headerTitle: () => (
+                      <Link href="/" asChild>
+                        <Pressable>
+                          <Image
+                            source={require("@/assets/images/logo.png")}
+                            style={{ width: 43, height: 28 }}
+                            resizeMode="contain"
+                          />
+                        </Pressable>
+                      </Link>
+                    ),
+                  }
+                : {
+                    headerLeft: () => <BackButton />,
+                  }),
+            }}
+          />
+        ))}
+      </Tabs>
+      <NotificationsModal
+        visible={notificationsVisible}
+        onClose={() => setNotificationsVisible(false)}
+      />
+    </>
   );
 }

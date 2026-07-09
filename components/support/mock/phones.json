@@ -1,0 +1,26 @@
+[
+  {
+    "key": "s25",
+    "name": "갤럭시 S25",
+    "category": "galaxy",
+    "price": 1155000,
+    "gradient": ["#DCE8FA", "#B9C9F5", "#8FA6E8"],
+    "dotOpacity": 0.16
+  },
+  {
+    "key": "s25plus",
+    "name": "갤럭시 S25+",
+    "category": "galaxy",
+    "price": 1353000,
+    "gradient": ["#CFC9D6", "#A79AB0", "#736278"],
+    "dotOpacity": 0.2
+  },
+  {
+    "key": "ultra",
+    "name": "갤럭시 S25 울트라",
+    "category": "galaxy",
+    "price": 2127400,
+    "gradient": ["#F3E9C9", "#D9C48A", "#4A4640"],
+    "dotOpacity": 0.22
+  }
+]

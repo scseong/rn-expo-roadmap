@@ -1,0 +1,74 @@
+{
+  "s25": {
+    "specs": {
+      "manufacturer": "삼성전자",
+      "modelName": "갤럭시 S25 (256G)",
+      "releaseDate": "2025년 02월",
+      "cpu": "스냅드래곤 8 엘리트",
+      "ram": "12GB",
+      "internalStorage": "256GB",
+      "externalStorage": "X",
+      "battery": "4,000mAh",
+      "weight": "167g",
+      "displaySize": "6.2인치",
+      "screen": "6.2 inch",
+      "camera": "전면 1200만 / 후면 1200만",
+      "etc": "NFC, 충전, 방진방수"
+    },
+    "carriers": {
+      "all": { "totalSubsidy": -1418000, "monthlyFee": 109000, "monthlyPay": 97394, "monthlyInstallment": -11606 },
+      "skt": { "totalSubsidy": -1418000, "monthlyFee": 109000, "monthlyPay": 97394, "monthlyInstallment": -11606 },
+      "kt": { "totalSubsidy": -1380000, "monthlyFee": 109000, "monthlyPay": 99206, "monthlyInstallment": -13418 },
+      "lgu": { "totalSubsidy": -1450000, "monthlyFee": 109000, "monthlyPay": 95873, "monthlyInstallment": -10085 },
+      "mvno": { "totalSubsidy": -900000, "monthlyFee": 33000, "monthlyPay": 44520, "monthlyInstallment": -11606 }
+    }
+  },
+  "s25plus": {
+    "specs": {
+      "manufacturer": "삼성전자",
+      "modelName": "갤럭시 S25+ (256G)",
+      "releaseDate": "2025년 02월",
+      "cpu": "스냅드래곤 8 엘리트",
+      "ram": "12GB",
+      "internalStorage": "256GB",
+      "externalStorage": "X",
+      "battery": "4,900mAh",
+      "weight": "190g",
+      "displaySize": "6.7인치",
+      "screen": "6.7 inch",
+      "camera": "전면 1200만 / 후면 5000만",
+      "etc": "NFC, 충전, 방진방수"
+    },
+    "carriers": {
+      "all": { "totalSubsidy": -1661000, "monthlyFee": 127700, "monthlyPay": 114100, "monthlyInstallment": -13600 },
+      "skt": { "totalSubsidy": -1661000, "monthlyFee": 127700, "monthlyPay": 114100, "monthlyInstallment": -13600 },
+      "kt": { "totalSubsidy": -1617000, "monthlyFee": 127700, "monthlyPay": 116200, "monthlyInstallment": -15700 },
+      "lgu": { "totalSubsidy": -1699000, "monthlyFee": 127700, "monthlyPay": 112300, "monthlyInstallment": -11800 },
+      "mvno": { "totalSubsidy": -1054000, "monthlyFee": 38700, "monthlyPay": 52200, "monthlyInstallment": -13600 }
+    }
+  },
+  "ultra": {
+    "specs": {
+      "manufacturer": "삼성전자",
+      "modelName": "갤럭시 S25 울트라 (256G)",
+      "releaseDate": "2025년 02월",
+      "cpu": "스냅드래곤 8 엘리트",
+      "ram": "12GB",
+      "internalStorage": "256GB",
+      "externalStorage": "X",
+      "battery": "5,000mAh",
+      "weight": "218g",
+      "displaySize": "6.9인치",
+      "screen": "6.9 inch",
+      "camera": "전면 1200만 / 후면 2억",
+      "etc": "NFC, 충전, S펜"
+    },
+    "carriers": {
+      "all": { "totalSubsidy": -2612000, "monthlyFee": 200800, "monthlyPay": 179400, "monthlyInstallment": -21400 },
+      "skt": { "totalSubsidy": -2612000, "monthlyFee": 200800, "monthlyPay": 179400, "monthlyInstallment": -21400 },
+      "kt": { "totalSubsidy": -2542000, "monthlyFee": 200800, "monthlyPay": 182700, "monthlyInstallment": -24700 },
+      "lgu": { "totalSubsidy": -2671000, "monthlyFee": 200800, "monthlyPay": 176600, "monthlyInstallment": -18600 },
+      "mvno": { "totalSubsidy": -1658000, "monthlyFee": 60800, "monthlyPay": 82000, "monthlyInstallment": -21400 }
+    }
+  }
+}
